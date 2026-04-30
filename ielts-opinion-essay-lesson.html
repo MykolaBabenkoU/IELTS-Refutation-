@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing — Counter Arguments & Refutation</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-50:#EEEDFE;--purple-200:#AFA9EC;--purple-400:#7F77DD;--purple-700:#3C3489;
+    --coral-50:#FAECE7;--coral-200:#F0997B;--coral-600:#993C1D;
+    --teal-50:#E1F5EE;--teal-200:#5DCAA5;--teal-700:#085041;
+    --amber-50:#FAEEDA;--amber-200:#FAC775;--amber-700:#633806;
+    --gray-50:#F7F6F3;--gray-100:#ECEAE4;--gray-200:#D3D1C7;--gray-600:#5F5E5A;--gray-900:#2C2C2A;
+    --red-50:#FCEBEB;--red-200:#F7C1C1;--red-700:#791F1F;
+    --green-50:#EAF3DE;--green-600:#3B6D11;--green-700:#27500A;
+    --bg:#FAFAF8;--surface:#FFFFFF;--text:#2C2C2A;--text-muted:#5F5E5A;
+    --border:rgba(44,44,42,0.12);
+    --font-display:'Lora',Georgia,serif;--font-body:'DM Sans',sans-serif;
+    --radius:10px;--radius-lg:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+  .hero{background:var(--gray-900);color:#fff;padding:3rem 2rem 2.5rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(127,119,221,0.15)}
+  .hero::after{content:'';position:absolute;bottom:-30px;left:30%;width:160px;height:160px;border-radius:50%;border:24px solid rgba(93,202,165,0.1)}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .hero-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-200);background:rgba(127,119,221,0.15);border-radius:20px;padding:4px 12px;margin-bottom:1rem}
+  .hero h1{font-family:var(--font-display);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:#fff;line-height:1.25;margin-bottom:.75rem}
+  .hero h1 em{color:var(--purple-200);font-style:italic}
+  .hero p{font-size:15px;color:rgba(255,255,255,0.6);max-width:520px}
+  .hero-meta{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+  .meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.5)}
+  .meta-dot{width:6px;height:6px;border-radius:50%;background:var(--teal-200)}
+  .container{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .progress-nav{display:flex;gap:6px;margin-bottom:2.5rem;flex-wrap:wrap}
+  .nav-step{font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;transition:all .2s;font-family:var(--font-body)}
+  .nav-step:hover{border-color:var(--purple-400);color:var(--purple-700)}
+  .nav-step.active{background:var(--purple-700);color:#fff;border-color:var(--purple-700)}
+  .lesson-section{display:none;animation:fadeIn .3s ease}
+  .lesson-section.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .section-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+  .eyebrow-badge{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:var(--purple-50);color:var(--purple-700)}
+  .eyebrow-line{flex:1;height:1px;background:var(--border)}
+  h2{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}
+  .section-intro{font-size:15px;color:var(--text-muted);margin-bottom:1.75rem;max-width:600px;line-height:1.7}
+  .def-box{background:var(--purple-50);border-left:3px solid var(--purple-400);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem;margin-bottom:1.5rem}
+  .def-box p{font-size:14px;color:var(--purple-700);line-height:1.7}
+  .two-part{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem}
+  @media(max-width:500px){.two-part{grid-template-columns:1fr}}
+  .part-card{padding:1rem 1.25rem;border-radius:var(--radius);border:1px solid var(--border)}
+  .part-card.counter{background:var(--amber-50);border-color:var(--amber-200)}
+  .part-card.refute{background:var(--teal-50);border-color:var(--teal-200)}
+  .part-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .part-card.counter .part-label{color:var(--amber-700)}
+  .part-card.refute .part-label{color:var(--teal-700)}
+  .part-desc{font-size:13px;line-height:1.6}
+  .part-card.counter .part-desc{color:var(--amber-700)}
+  .part-card.refute .part-desc{color:var(--teal-700)}
+  .benefits-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.5rem}
+  @media(max-width:540px){.benefits-grid{grid-template-columns:1fr}}
+  .benefit-card{padding:1rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+  .benefit-icon{font-size:18px;margin-bottom:6px}
+  .benefit-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+  .benefit-desc{font-size:12px;color:var(--text-muted);line-height:1.5}
+  .flow{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+  .flow-item{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:border-color .2s}
+  .flow-item:hover{border-color:var(--purple-200)}
+  .flow-item.highlight{border-color:var(--coral-200);background:var(--coral-50)}
+  .flow-num{min-width:28px;height:28px;border-radius:50%;background:var(--purple-50);color:var(--purple-700);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+  .flow-item.highlight .flow-num{background:var(--coral-200);color:var(--coral-600)}
+  .flow-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
+  .flow-item.highlight .flow-title{color:var(--coral-600)}
+  .flow-desc{font-size:13px;color:var(--text-muted);line-height:1.5}
+  .when-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem}
+  @media(max-width:500px){.when-grid{grid-template-columns:1fr}}
+  .when-card{padding:1rem 1.1rem;border-radius:var(--radius);border:1px solid var(--border)}
+  .when-card.yes{background:var(--green-50);border-color:rgba(59,109,17,0.25)}
+  .when-card.no{background:var(--red-50);border-color:rgba(226,75,74,0.2)}
+  .when-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .when-card.yes .when-label{color:var(--green-600)}
+  .when-card.no .when-label{color:var(--red-700)}
+  .when-list{font-size:13px;line-height:2}
+  .when-card.yes .when-list{color:var(--green-700)}
+  .when-card.no .when-list{color:var(--red-700)}
+  .example-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1.25rem}
+  .example-label{padding:10px 16px;background:var(--gray-50);border-bottom:1px solid var(--border);font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+  .example-body{padding:18px 20px}
+  .example-text{font-family:var(--font-display);font-size:15px;line-height:1.9;color:var(--text)}
+  .hl-concession{background:var(--amber-50);color:var(--amber-700);border-radius:3px;padding:1px 4px}
+  .hl-refute{background:var(--teal-50);color:var(--teal-700);border-radius:3px;padding:1px 4px}
+  .hl-thesis{background:var(--purple-50);color:var(--purple-700);border-radius:3px;padding:1px 4px}
+  .example-note{margin-top:12px;font-size:12px;color:var(--text-muted);font-style:italic;line-height:1.6}
+  .ex-table{width:100%;border-collapse:collapse;margin-bottom:1.25rem;font-size:13px}
+  .ex-table th{background:var(--gray-50);padding:9px 14px;text-align:left;font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--border)}
+  .ex-table td{padding:10px 14px;border:1px solid var(--border);vertical-align:top;line-height:1.6}
+  .ex-table tr:nth-child(even) td{background:var(--gray-50)}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted)}
+  .legend-dot{width:12px;height:12px;border-radius:3px}
+  .tab-nav{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}
+  .tab-btn{font-size:13px;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;transition:all .2s;font-family:var(--font-body)}
+  .tab-btn:hover{border-color:var(--purple-400);color:var(--purple-700)}
+  .tab-btn.active{background:var(--purple-700);color:#fff;border-color:var(--purple-700)}
+  .tab-pane{display:none}
+  .tab-pane.active{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:520px){.tab-pane.active{grid-template-columns:1fr}}
+  .phrase-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+  .phrase-category{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:8px}
+  .phrase-list{font-size:13px;color:var(--text);line-height:2.1}
+  .phrase-list span{display:inline-block;font-style:italic;color:var(--purple-700);font-family:var(--font-display)}
+  .avoid-card{background:var(--red-50);border:1px solid rgba(226,75,74,0.2);border-radius:var(--radius);padding:14px 16px;grid-column:1/-1}
+  .avoid-row{display:flex;align-items:baseline;gap:8px;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(226,75,74,0.1)}
+  .avoid-row:last-child{border-bottom:none}
+  .avoid-x{color:#E24B4A;font-weight:500;flex-shrink:0}
+  .avoid-phrase{text-decoration:line-through;color:var(--text-muted);font-family:var(--font-display);font-style:italic}
+  .avoid-reason{color:var(--red-700);font-size:12px}
+  .quiz-wrap{max-width:640px}
+  .quiz-progress-bar{height:3px;background:var(--gray-100);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+  .quiz-progress-fill{height:100%;background:var(--purple-400);border-radius:2px;transition:width .4s ease}
+  .quiz-q-label{font-size:12px;color:var(--text-muted);margin-bottom:8px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+  .quiz-question{font-family:var(--font-display);font-size:15px;color:var(--text);margin-bottom:1.25rem;line-height:1.7}
+  .quiz-options{display:flex;flex-direction:column;gap:8px}
+  .quiz-opt{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;font-size:13px;font-family:var(--font-body);color:var(--text);text-align:left;cursor:pointer;transition:all .2s;line-height:1.5}
+  .quiz-opt:hover:not(:disabled){border-color:var(--purple-400);background:var(--purple-50)}
+  .quiz-opt.correct{background:var(--green-50);border-color:#639922;color:var(--green-700)}
+  .quiz-opt.wrong{background:var(--red-50);border-color:#E24B4A;color:var(--red-700)}
+  .quiz-feedback{margin-top:12px;padding:12px 16px;border-radius:var(--radius);font-size:13px;line-height:1.7;display:none}
+  .quiz-feedback.show{display:block}
+  .quiz-feedback.correct{background:var(--green-50);color:var(--green-700);border:1px solid rgba(99,153,34,0.2)}
+  .quiz-feedback.wrong{background:var(--red-50);color:var(--red-700);border:1px solid rgba(226,75,74,0.2)}
+  .quiz-next{margin-top:12px;padding:9px 20px;border-radius:20px;border:1px solid var(--purple-400);background:transparent;color:var(--purple-700);font-size:13px;font-family:var(--font-body);cursor:pointer;display:none;transition:all .2s}
+  .quiz-next:hover{background:var(--purple-700);color:#fff}
+  .quiz-next.show{display:inline-block}
+  .quiz-done{text-align:center;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg)}
+  .quiz-done h3{font-family:var(--font-display);font-size:1.2rem;margin-bottom:.5rem}
+  .quiz-done p{font-size:14px;color:var(--text-muted);margin-bottom:1rem}
+  .score-big{font-size:3rem;font-weight:300;color:var(--purple-700);font-family:var(--font-display)}
+  .practice-topics{display:flex;flex-direction:column;gap:10px;margin-top:1rem}
+  .topic-card{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .2s;text-align:left;width:100%;font-family:var(--font-body)}
+  .topic-card:hover{border-color:var(--purple-400);transform:translateX(3px)}
+  .topic-icon{font-size:20px;flex-shrink:0}
+  .topic-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px}
+  .topic-hint{font-size:12px;color:var(--text-muted)}
+  .topic-arrow{margin-left:auto;color:var(--text-muted);font-size:16px}
+  .practice-editor{margin-top:1.5rem;display:none}
+  .practice-editor.show{display:block}
+  .editor-prompt{padding:12px 16px;background:var(--purple-50);border:1px solid var(--purple-200);border-radius:var(--radius) var(--radius) 0 0;font-size:13px;color:var(--purple-700);font-weight:500;line-height:1.5}
+  .editor-textarea{width:100%;min-height:140px;padding:14px 16px;border:1px solid var(--purple-200);border-top:none;border-radius:0 0 var(--radius) var(--radius);font-family:var(--font-display);font-size:14px;line-height:1.8;color:var(--text);background:var(--surface);resize:vertical;outline:none;transition:border-color .2s}
+  .editor-textarea:focus{border-color:var(--purple-400)}
+  .editor-actions{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap}
+  .check-btn{padding:9px 22px;border-radius:20px;border:none;background:var(--purple-700);color:#fff;font-size:13px;font-family:var(--font-body);cursor:pointer;transition:opacity .2s}
+  .check-btn:hover{opacity:.85}
+  .checklist{margin-top:12px;background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:none}
+  .checklist.show{display:block}
+  .check-title{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:10px}
+  .check-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text);line-height:1.5;cursor:pointer}
+  .check-item:last-child{border-bottom:none}
+  .check-box{min-width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}
+  .check-item.checked .check-box{background:var(--purple-700);border-color:var(--purple-700)}
+  .check-item.checked .check-box::after{content:'✓';color:#fff;font-size:11px}
+  .check-item.checked>span{text-decoration:line-through;color:var(--text-muted)}
+  .section-nav{display:flex;justify-content:space-between;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+  .nav-btn{padding:9px 20px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:13px;font-family:var(--font-body);cursor:pointer;transition:all .2s}
+  .nav-btn:hover{border-color:var(--purple-400);color:var(--purple-700)}
+  .nav-btn.primary{background:var(--purple-700);color:#fff;border-color:var(--purple-700)}
+  .nav-btn.primary:hover{opacity:.85}
+  .nav-btn:disabled{opacity:.3;cursor:not-allowed}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--gray-200);border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">IELTS Writing Task 2</div>
+    <h1>Counter arguments &amp;<br><em>refutation</em></h1>
+    <p>How to acknowledge the opposing view and powerfully counter it — the skill that separates Band 6 from Band 7+.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-dot"></div>6 sections</div>
+      <div class="meta-item"><div class="meta-dot"></div>Annotated examples</div>
+      <div class="meta-item"><div class="meta-dot"></div>Phrase bank</div>
+      <div class="meta-item"><div class="meta-dot"></div>Quiz + writing practice</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <nav class="progress-nav">
+    <button class="nav-step active" onclick="goTo(0)">1 · What &amp; why</button>
+    <button class="nav-step" onclick="goTo(1)">2 · Structure</button>
+    <button class="nav-step" onclick="goTo(2)">3 · Examples</button>
+    <button class="nav-step" onclick="goTo(3)">4 · Phrases</button>
+    <button class="nav-step" onclick="goTo(4)">5 · Quiz</button>
+    <button class="nav-step" onclick="goTo(5)">6 · Practice</button>
+  </nav>
+
+  <!-- S0: What & Why -->
+  <section class="lesson-section active" id="s0">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Step 1</span><div class="eyebrow-line"></div></div>
+    <h2>What is a counter argument?</h2>
+    <p class="section-intro">Before writing one, understand exactly what it is and why examiners reward it.</p>
+    <div class="def-box">
+      <p>A <strong>counter argument</strong> is an opposing viewpoint that challenges your main argument. It presents evidence or opinions that contrast with your thesis, and is always followed by a <strong>refutation</strong> — a response that explains why the opposing view is flawed or less convincing.</p>
+    </div>
+    <div class="two-part">
+      <div class="part-card counter">
+        <div class="part-label">Part 1 — Counter argument</div>
+        <div class="part-desc">The opposing viewpoint, stated fairly. You are giving the other side a genuine chance to speak.</div>
+      </div>
+      <div class="part-card refute">
+        <div class="part-label">Part 2 — Refutation</div>
+        <div class="part-desc">A direct response explaining why the opposing view is flawed, limited, or outweighed by your argument.</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;line-height:1.7">Together, these two parts form a single paragraph that shows the examiner you can evaluate multiple perspectives logically — one of the clearest signals of Band 7+ critical thinking.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🧠</div>
+        <div class="benefit-title">Critical thinking</div>
+        <div class="benefit-desc">Discussing both sides shows you can evaluate perspectives logically, not just list opinions.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💪</div>
+        <div class="benefit-title">More persuasive</div>
+        <div class="benefit-desc">Refuting the opposite side makes your argument stronger and more objective to the reader.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✍️</div>
+        <div class="benefit-title">Deeper writing</div>
+        <div class="benefit-desc">Instead of sounding one-sided, your essay becomes more dynamic and interesting to read.</div>
+      </div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" disabled>← Previous</button>
+      <button class="nav-btn primary" onclick="goTo(1)">Next: Structure →</button>
+    </div>
+  </section>
+
+  <!-- S1: Structure -->
+  <section class="lesson-section" id="s1">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Step 2</span><div class="eyebrow-line"></div></div>
+    <h2>Essay structure</h2>
+    <p class="section-intro">A standard agree/disagree essay has four parts. Body paragraph 2 is where critical thinking becomes visible to the examiner.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div><div class="flow-title">Introduction</div><div class="flow-desc">Paraphrase the topic → clear Thesis Statement (your position in one sentence)</div></div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div><div class="flow-title">Body paragraph 1 — Your main argument</div><div class="flow-desc">Topic sentence → Evidence or example → Explanation of why it matters</div></div>
+      </div>
+      <div class="flow-item highlight">
+        <div class="flow-num">3</div>
+        <div><div class="flow-title">Body paragraph 2 — Counter argument + Refutation ★</div><div class="flow-desc">Acknowledge the opposing view fairly → counter it with a stronger, specific argument. This is the key paragraph for Band 7+.</div></div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div><div class="flow-title">Conclusion</div><div class="flow-desc">Restate your thesis in new words + brief summary. No new information.</div></div>
+      </div>
+    </div>
+    <div class="when-grid">
+      <div class="when-card yes">
+        <div class="when-label">✓ Use a counter argument when</div>
+        <div class="when-list">You have a clear position on one side<br>You can identify a real flaw in the opposing view<br>The topic has two genuinely distinct sides<br>You want to demonstrate critical thinking</div>
+      </div>
+      <div class="when-card no">
+        <div class="when-label">✗ Avoid it when</div>
+        <div class="when-list">Your position is unclear or shifting<br>You cannot find a specific weakness to refute<br>It makes your essay lose coherence<br>The question asks only to "discuss both views"</div>
+      </div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goTo(0)">← Previous</button>
+      <button class="nav-btn primary" onclick="goTo(2)">Next: Examples →</button>
+    </div>
+  </section>
+
+  <!-- S2: Examples -->
+  <section class="lesson-section" id="s2">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Step 3</span><div class="eyebrow-line"></div></div>
+    <h2>Annotated examples</h2>
+    <p class="section-intro">Notice how the counter argument is fair, and how the refutation introduces a specific, concrete weakness — never just "I disagree".</p>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--amber-50);border:1px solid #EF9F27"></div>Counter argument</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--teal-50);border:1px solid var(--teal-200)"></div>Pivot word</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--purple-50);border:1px solid var(--purple-400)"></div>Refutation</div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-label">Example 1 — Social media and teenagers</div>
+      <div class="example-body">
+        <table class="ex-table">
+          <tr><th>Part</th><th>Content</th></tr>
+          <tr><td><strong>Main argument</strong></td><td>Excessive use of social media negatively affects teenagers' health, studies, and social relationships.</td></tr>
+          <tr><td><strong>Counter argument</strong></td><td>Some people argue that social media is useful for connection and knowledge sharing.</td></tr>
+          <tr><td><strong>Refutation</strong></td><td>However, overuse can harm real-life relationships, reduce critical thinking due to unreliable content, and negatively impact daily life.</td></tr>
+        </table>
+        <p class="example-text" style="margin-top:12px">
+          <span class="hl-concession">Some people argue that social media is useful for connection and knowledge sharing.</span>
+          <span class="hl-refute"> However, this argument fails to consider that</span>
+          <span class="hl-thesis"> overuse actively harms real-life relationships, erodes critical thinking through exposure to unreliable content, and disrupts the daily routines of adolescents at a critical stage of development.</span>
+        </p>
+        <p class="example-note">The refutation adds three specific harms — not a vague claim. Specificity is what distinguishes Band 7 from Band 5.</p>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-label">Example 2 — Environment vs economy</div>
+      <div class="example-body">
+        <p class="example-text">
+          <span class="hl-concession">Critics might argue that economic growth is necessary to fund environmental projects and that slowing development could hurt global progress.</span>
+          <span class="hl-refute"> While this point has some validity, it does not account for the fact that</span>
+          <span class="hl-thesis"> unchecked industrial expansion causes the very environmental damage it claims to fund a solution for — a contradiction that undermines the argument entirely and highlights the need to prioritise sustainability from the outset.</span>
+        </p>
+        <p class="example-note">This refutation exposes an internal contradiction in the opposing view — a sophisticated move that signals strong analytical thinking.</p>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-label">Example 3 — Video games (practice topic)</div>
+      <div class="example-body">
+        <p class="example-text">
+          <span class="hl-concession">The opponents might argue that video games can improve cognitive skills, such as problem-solving and hand-eye coordination.</span>
+          <span class="hl-refute"> While it is true that some games offer these benefits, this argument does not account for the reality that</span>
+          <span class="hl-thesis"> excessive gaming typically leads to a sedentary lifestyle, chronic sleep disruption, and a measurable decline in academic performance — impacts that far outweigh any cognitive gains for the majority of teenage players.</span>
+        </p>
+        <p class="example-note">"Does not account for the reality that" is a clean academic pivot. It accepts the grain of truth while redirecting to a bigger, more important problem.</p>
+      </div>
+    </div>
+
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goTo(1)">← Previous</button>
+      <button class="nav-btn primary" onclick="goTo(3)">Next: Phrases →</button>
+    </div>
+  </section>
+
+  <!-- S3: Phrases -->
+  <section class="lesson-section" id="s3">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Step 4</span><div class="eyebrow-line"></div></div>
+    <h2>Phrase bank</h2>
+    <p class="section-intro">Use these to signal each move clearly. Examiners read fast — make your structure obvious through language choices.</p>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(event,'t-concede')">Counter argument</button>
+      <button class="tab-btn" onclick="switchTab(event,'t-refute')">Refutation</button>
+      <button class="tab-btn" onclick="switchTab(event,'t-avoid')">Avoid these ✗</button>
+    </div>
+    <div class="tab-pane active" id="t-concede">
+      <div class="phrase-card">
+        <div class="phrase-category">Neutral acknowledgement</div>
+        <div class="phrase-list">
+          <span>Admittedly, …</span><br>
+          <span>It is true that …</span><br>
+          <span>Granted, …</span><br>
+          <span>There is some merit in the idea that …</span><br>
+          <span>While it is true that …, it is equally important to consider …</span>
+        </div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-category">Attributing to others</div>
+        <div class="phrase-list">
+          <span>Some people argue that …</span><br>
+          <span>It is often argued that …</span><br>
+          <span>Critics may claim that …</span><br>
+          <span>Opponents of this view argue …</span><br>
+          <span>Although … is a valid point, it is not the whole story.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="t-refute">
+      <div class="phrase-card">
+        <div class="phrase-category">Strong contrast</div>
+        <div class="phrase-list">
+          <span>However, this argument fails to consider …</span><br>
+          <span>Nevertheless, …</span><br>
+          <span>Yet, this view does not account for …</span><br>
+          <span>This view is convincing at first, but …</span><br>
+          <span>In contrast / Conversely, …</span>
+        </div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-category">Weighing and explaining</div>
+        <div class="phrase-list">
+          <span>… is largely outweighed by …</span><br>
+          <span>… does not account for …</span><br>
+          <span>… is a short-sighted view because …</span><br>
+          <span>While this point is partly valid, it does not account for …</span><br>
+          <span>… pales in comparison to …</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="t-avoid">
+      <div class="avoid-card">
+        <div class="phrase-category" style="color:var(--red-700)">Phrases to avoid in Task 2</div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">But …</span><span class="avoid-reason">— too informal; never start a sentence with it</span></div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">Although I agree, I disagree …</span><span class="avoid-reason">— contradictory and confusing</span></div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">In my humble opinion …</span><span class="avoid-reason">— cliché that lowers your Band Score</span></div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">On one hand … on other hand …</span><span class="avoid-reason">— missing "the"; also blurs your position</span></div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">Both sides have their pros and cons …</span><span class="avoid-reason">— vague; fails to commit to a position</span></div>
+        <div class="avoid-row"><span class="avoid-x">✗</span><span class="avoid-phrase">It is bad / harmful / wrong …</span><span class="avoid-reason">— too vague; always name the specific mechanism or consequence</span></div>
+      </div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goTo(2)">← Previous</button>
+      <button class="nav-btn primary" onclick="goTo(4)">Next: Quiz →</button>
+    </div>
+  </section>
+
+  <!-- S4: Quiz -->
+  <section class="lesson-section" id="s4">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Check yourself</span><div class="eyebrow-line"></div></div>
+    <h2>Mini quiz</h2>
+    <p class="section-intro">Four questions. Read carefully — some options sound plausible but are subtly wrong.</p>
+    <div class="quiz-wrap">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qprogress" style="width:0%"></div></div>
+      <div id="quiz-inner"></div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goTo(3)">← Previous</button>
+      <button class="nav-btn primary" onclick="goTo(5)">Next: Practice →</button>
+    </div>
+  </section>
+
+  <!-- S5: Practice -->
+  <section class="lesson-section" id="s5">
+    <div class="section-eyebrow"><span class="eyebrow-badge">Writing practice</span><div class="eyebrow-line"></div></div>
+    <h2>Write your paragraph</h2>
+    <p class="section-intro">Choose a topic. Write Body paragraph 2 using the counter argument + refutation structure. Then self-assess with the checklist before sharing with your teacher.</p>
+    <div class="practice-topics" id="practice-topics">
+      <button class="topic-card" onclick="selectTopic(0)">
+        <div class="topic-icon">📱</div>
+        <div><div class="topic-title">Excessive social media use negatively affects teenagers</div><div class="topic-hint">Think about: connection and knowledge sharing vs real-life relationships and critical thinking</div></div>
+        <div class="topic-arrow">→</div>
+      </button>
+      <button class="topic-card" onclick="selectTopic(1)">
+        <div class="topic-icon">🌍</div>
+        <div><div class="topic-title">Protecting the environment is more important than economic growth</div><div class="topic-hint">Think about: funding for green projects vs the damage caused by unchecked growth</div></div>
+        <div class="topic-arrow">→</div>
+      </button>
+      <button class="topic-card" onclick="selectTopic(2)">
+        <div class="topic-icon">🎮</div>
+        <div><div class="topic-title">Video games negatively impact teenagers' health and academic performance</div><div class="topic-hint">Think about: cognitive skills vs sedentary lifestyle, sleep, and study habits</div></div>
+        <div class="topic-arrow">→</div>
+      </button>
+      <button class="topic-card" onclick="selectTopic(3)">
+        <div class="topic-icon">🍔</div>
+        <div><div class="topic-title">The government should ban fast food advertising</div><div class="topic-hint">Think about: freedom of choice vs public health responsibility</div></div>
+        <div class="topic-arrow">→</div>
+      </button>
+    </div>
+    <div class="practice-editor" id="practice-editor">
+      <div class="editor-prompt" id="editor-prompt">Write your counter argument + refutation paragraph here:</div>
+      <textarea class="editor-textarea" id="editor-text" placeholder="Some people argue that … / Admittedly, … However, this fails to consider …"></textarea>
+      <div class="editor-actions">
+        <button class="check-btn" onclick="showChecklist()">Self-assess with checklist</button>
+        <button class="nav-btn" onclick="resetPractice()" style="font-size:12px">← Choose different topic</button>
+      </div>
+      <div class="checklist" id="checklist">
+        <div class="check-title">Self-assessment checklist — tap each item to tick off</div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>I used a clear phrase to introduce the counter argument (Admittedly / Some people argue / It is true that)</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>My counter argument is genuinely fair — I gave the opposing side a real, specific point</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>I used a strong pivot phrase (However / Nevertheless / While this point is partly valid)</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>My refutation names a specific flaw or consequence — not just "I disagree" or "it is bad"</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>I explained why the opposing view is limited or outweighed (not just stated it)</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>My overall position is clear and consistent with my thesis by the end of the paragraph</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span>I avoided informal language, clichés, and phrases from the "avoid" list</span></div>
+      </div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goTo(4)">← Previous</button>
+      <button class="nav-btn" style="opacity:.4;cursor:default" disabled>End of lesson ✓</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navSteps = document.querySelectorAll('.nav-step');
+  let currentSection = 0;
+  function goTo(i) {
+    sections[currentSection].classList.remove('active');
+    navSteps[currentSection].classList.remove('active');
+    currentSection = i;
+    sections[i].classList.add('active');
+    navSteps[i].classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function switchTab(e, id) {
+    const sec = e.target.closest('.lesson-section');
+    sec.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    sec.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    e.target.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+
+  const quizData = [
+    {
+      q:"What are the two essential parts of a counter argument paragraph?",
+      opts:["A topic sentence and a concluding sentence","The counter argument (opposing view) and the refutation (why it is flawed or limited)","An example and a statistic to support your view","A thesis statement and a paraphrase of the question"],
+      correct:1,
+      fb:"Correct! Every counter argument paragraph needs both: a fair acknowledgement of the opposing view, then a specific explanation of why it is flawed or outweighed."
+    },
+    {
+      q:"Which sentence is the strongest refutation?",
+      opts:["However, I do not agree with this view.","Nevertheless, this is not always true.","However, this argument fails to consider that unchecked economic growth causes the very environmental damage it claims to fund a solution for — exposing an internal contradiction.","Some people might disagree, but I still think my point is right."],
+      correct:2,
+      fb:"Correct! A strong refutation explains specifically why the opposing view is flawed — here it identifies a logical contradiction. Vague phrases like 'I do not agree' or 'not always true' add nothing to your score."
+    },
+    {
+      q:"A student writes: 'Some people claim video games improve problem-solving skills. However, video games are bad for teenagers.' What is wrong with this refutation?",
+      opts:["It is too short","It starts with the wrong linking word","It does not name a specific harm — saying 'bad' without explaining how or why is too vague to be persuasive","It mentions video games twice"],
+      correct:2,
+      fb:"Correct! Vague refutations like 'it is bad' or 'it is harmful' are a common Band 5–6 mistake. You must name the specific mechanism: sedentary lifestyle, disrupted sleep, declining grades — something concrete."
+    },
+    {
+      q:"When is it NOT appropriate to include a counter argument?",
+      opts:["When you strongly agree with one side","When you cannot identify a real, specific weakness in the opposing view to refute","When the essay topic is about technology","When your essay is longer than 280 words"],
+      correct:1,
+      fb:"Correct! A counter argument only strengthens your essay if you can genuinely refute it with a specific point. If you cannot find a real flaw, the paragraph will seem weak and may hurt your Coherence & Cohesion score."
+    }
+  ];
+
+  let qCurrent = 0, qScore = 0, qAnswered = false;
+  function renderQuiz() {
+    document.getElementById('qprogress').style.width = (qCurrent / quizData.length * 100) + '%';
+    if (qCurrent >= quizData.length) {
+      document.getElementById('quiz-inner').innerHTML = `<div class="quiz-done"><div class="score-big">${qScore}/${quizData.length}</div><h3>${qScore===quizData.length?'Perfect score!':qScore>=3?'Well done!':'Keep practising!'}</h3><p>${qScore===quizData.length?'You understand the structure clearly. Time to write your own paragraph!':'Review the examples and phrase bank, then try again.'}</p><button class="check-btn" onclick="restartQuiz()">Retry quiz</button></div>`;
+      document.getElementById('qprogress').style.width = '100%';
+      return;
+    }
+    const q = quizData[qCurrent];
+    document.getElementById('quiz-inner').innerHTML = `<p class="quiz-q-label">Question ${qCurrent+1} of ${quizData.length}</p><p class="quiz-question">${q.q}</p><div class="quiz-options">${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerQ(${i})">${o}</button>`).join('')}</div><div class="quiz-feedback" id="qfb"></div><button class="quiz-next" id="qnext" onclick="nextQ()">Next question →</button>`;
+    qAnswered = false;
+  }
+  function answerQ(i) {
+    if (qAnswered) return; qAnswered = true;
+    const q = quizData[qCurrent];
+    document.querySelectorAll('.quiz-opt').forEach((b,idx)=>{ b.disabled=true; if(idx===q.correct)b.classList.add('correct'); else if(idx===i)b.classList.add('wrong'); });
+    if (i===q.correct) qScore++;
+    const fb = document.getElementById('qfb');
+    fb.textContent = (i===q.correct?'✓ ':'✗ ') + q.fb;
+    fb.className = 'quiz-feedback show ' + (i===q.correct?'correct':'wrong');
+    document.getElementById('qnext').className = 'quiz-next show';
+  }
+  function nextQ() { qCurrent++; renderQuiz(); }
+  function restartQuiz() { qCurrent=0; qScore=0; renderQuiz(); }
+  renderQuiz();
+
+  const topics = [
+    "Excessive social media use negatively affects teenagers.",
+    "Protecting the environment is more important than economic growth.",
+    "Video games negatively impact teenagers' health and academic performance.",
+    "The government should ban fast food advertising."
+  ];
+  function selectTopic(i) {
+    document.getElementById('practice-topics').style.display='none';
+    document.getElementById('editor-prompt').textContent='Topic: "'+topics[i]+'" — Write your Body paragraph 2 (counter argument + refutation):';
+    document.getElementById('practice-editor').classList.add('show');
+  }
+  function resetPractice() {
+    document.getElementById('practice-topics').style.display='flex';
+    document.getElementById('practice-editor').classList.remove('show');
+    document.getElementById('editor-text').value='';
+    document.getElementById('checklist').classList.remove('show');
+    document.querySelectorAll('.check-item').forEach(el=>el.classList.remove('checked'));
+  }
+  function showChecklist() { document.getElementById('checklist').classList.add('show'); }
+  function toggleCheck(el) { el.classList.toggle('checked'); }
+</script>
+</body>
+</html>
